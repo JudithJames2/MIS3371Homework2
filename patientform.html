@@ -1,1 +1,353 @@
+<!--trigger for browser mode start of html file-->
+<!DOCTYPE html>
+<!--head section of html file-->
+<!-- declares english as default language of html document and starts head--> <html lang="en"><head>
+ <!--specifies character encoding dor html document--> <meta charset="utf-8">
+  <!--This gives the browser instructions on how to control the page's dimensions and scaling.
+The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--the page title that shows up on the form-->
+      <title>Patient Registration Form</title>
+  <!--html tag used to link externat css stylesheet to a html document-->
+ <!--update style.css to new name of css stylesheet--> <link rel='stylesheet' href='style.css' type='text/css' />
+  <!--<script> element either contains scripting statements, or it points to an external script file through the src attribute.-->
+   <!--calls javascript function to display current date--> <script>
+       function displayDate() {
+            const today = new Date();
+          const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+ document.getElementById("today").innerHTML =
+                today.toLocaleDateString('en-US', options);
+        }
+    </script>
+  </head>
+  <!--starts body section of html visible content layer-->
+<!--triggers displayDate() JavaScript--> <body onload="displayDate()">
+  <!--<div> structures the header for website and links logo image to html division-->
+  <div id="header">
+<img src="./Customlogo.png" alt="Houston Medical Clinic Logo" id="logo">
+    </div>
+  <!-- sets header area size to certain width-->
+        <table width="100%">
+          <!--<tr> defines horizontal form of table-->
+            <tr>
+              <!-- <td> defines a standard data cell in html in this case the header cells-->
+                <td width="20%">
+                    <img src="logo.png" alt="Medical Logo" width="120">
+                </td>
+              <!--44-50 defines positioning of the title and date area-->
+   <td align="center">
+                    <h1>Houston Care Medical Center</h1>
+                    <h3>Patient Registration Form</h3>
+                </td>
+ <td align="right">
+                    <strong>Today is:</strong><br>
+                    <span id="today"></span>
+                </td>
+            </tr>
+        </table>
 
+    </div>
+  <!--<hr> creates a horizontal line that breaks into the user input section-->
+    <hr>
+  <!--action attribute dictates destination of form's data if user clicks submit here browser navigates to thankyou.html-->
+   <div id="main">
+        <form action="thankyou.html">
+          
+            <table class="formTable">
+                  <!--start of row one of table repersented by tr-->
+ <tr>
+   <!--start of first name table data aka td-->
+                    <td>First Name</td>
+                    <td>
+                        <input type="text"
+                            name="firstname"
+                            maxlength="30"
+                            required>
+                    </td>
+    <!--start of middle initial table data aka td-->
+     <td>Middle Initial</td>
+                    <td>
+                        <input type="text"
+                            name="middle"
+                            maxlength="1"
+                            size="1">
+                    </td>
+    <!--start of last name table data aka td-->
+ <td>Last Name</td>
+                    <td>
+                        <input type="text"
+                            name="lastname"
+                            maxlength="30"
+                            required>
+                    </td>
+                </tr>
+               <!--start of row two of table repersented by tr-->
+ <tr>
+                    <td>Date of Birth</td>
+                    <td>
+                        <input type="date"
+                            name="dob"
+                            required>
+                    </td>
+<td>Social Security</td>
+                    <td>
+                        <input type="password"
+                            maxlength="11"
+                            placeholder="XXX-XX-XXXX"
+                            required>
+                    </td>
+                </tr>
+ <tr>
+                    <td>Address Line 1</td>
+                    <td colspan="5">
+                        <input type="text"
+                            name="address1"
+                            maxlength="30"
+                            size="60"
+                            required>
+                    </td>
+                </tr>
+                <tr>
+   <td>Address Line 2</td>
+                    <td colspan="5">
+                        <input type="text"
+                            name="address2"
+                            maxlength="30"
+                            size="60">
+                    </td>
+                </tr>
+  <tr>
+
+                    <td>City</td>
+
+                    <td>
+                        <input type="text"
+                            maxlength="30"
+                            required>
+                    </td>
+ <td>State</td>
+                    <td>
+                        <select required>
+<option value="">Select</option>
+<option>AL</option>
+<option>AK</option>
+<option>AZ</option>
+<option>AR</option>
+<option>CA</option>
+<option>CO</option>
+<option>CT</option>
+<option>DE</option>
+<option>FL</option>
+<option>GA</option>
+<option>HI</option>
+<option>ID</option>
+<option>IL</option>
+<option>IN</option>
+<option>IA</option>
+<option>KS</option>
+<option>KY</option>
+<option>LA</option>
+<option>ME</option>
+<option>MD</option>
+<option>MA</option>
+<option>MI</option>
+<option>MN</option>
+<option>MS</option>
+<option>MO</option>
+<option>MT</option>
+<option>NE</option>
+<option>NV</option>
+<option>NH</option>
+<option>NJ</option>
+<option>NM</option>
+<option>NY</option>
+<option>NC</option>
+<option>ND</option>
+<option>OH</option>
+<option>OK</option>
+<option>OR</option>
+<option>PA</option>
+<option>RI</option>
+<option>SC</option>
+<option>SD</option>
+<option>TN</option>
+<option>TX</option>
+<option>UT</option>
+<option>VT</option>
+<option>VA</option>
+<option>WA</option>
+<option>WV</option>
+<option>WI</option>
+<option>WY</option>
+<option>DC</option>
+<option>PR</option>
+
+                        </select>
+
+                    </td>
+       <td>Zip Code</td>
+
+                    <td>
+                        <input type="text"
+                            maxlength="10"
+                            required>
+                    </td>
+           </tr>         
+                <tr>
+
+                    <td>Email</td>
+
+                    <td>
+                        <input type="email"
+                                 placeholder="name@domain.tld"
+                               
+                            required>
+                    </td>              
+    <td>Phone</td>
+
+                    <td>
+                        <input type="tel"
+                            placeholder="000-000-0000">
+                    </td>
+
+                </tr>
+              <tr>
+ <td>Medical History</td>
+
+                    <td colspan="5">
+
+<input type="checkbox"> Chicken Pox<br>
+<input type="checkbox"> Measles<br>
+<input type="checkbox"> COVID-19<br>
+<input type="checkbox"> Small Pox<br>
+<input type="checkbox"> Tetanus
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td colspan="5">
+
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<input type="radio" name="gender"> Other
+
+                    </td>
+                </tr>
+             <!--slider to rate pain--> 
+              <tr> 
+                <td>Pain Level</td>
+                  <td colspan="5">
+                     <label for="pain">Rate your pain (1 = No Pain, 10 = Worst Pain):</label>
+                      <br><br>
+
+        <span>1</span>
+
+        <input
+            type="range"
+            id="pain"
+            name="pain"
+            min="1"
+            max="10"
+            value="5"
+            step="1">
+<span>10</span>
+                     </td>
+</tr>
+              <!--next row that asks for vaccination-->
+                
+                <tr>
+<td>Vaccinated?</td>
+                  
+                    <td colspan="5">
+<input type="radio" name="vaccine"> Yes
+<input type="radio" name="vaccine"> No
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Insurance?</td>
+                    <td colspan="5">
+<input type="radio" name="insurance"> Yes
+<input type="radio" name="insurance"> No
+
+                    </td>
+                </tr>
+              <td>Password</td>
+                    <td>
+<input type="password"
+maxlength="20"
+required>
+     </td>
+              <td>Re-enter Password</td>
+
+                    <td>
+
+<input type="password"
+maxlength="20"
+required>
+
+                    </td>
+
+                </tr>
+               <tr>
+
+                    <td colspan="6" align="center">
+
+<input type="reset"
+value="CLEAR AND START OVER">
+
+&nbsp;&nbsp;&nbsp;
+
+<input type="submit"
+value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <hr>
+  <div id="footer">
+
+        <table width="100%">
+
+            <tr>
+
+                <td>
+
+                    <h3>Houston Care Medical Center</h3>
+
+                    PO Box 18881<br>
+                    Houston, TX 77477
+
+                </td>
+
+                <td align="center">
+
+                    <button type="button">
+                        Contact Us
+                    </button>
+
+                </td>
+
+                <td align="right">
+
+                    <a href="https://facebook.com">Facebook</a><br>
+                    <a href="https://twitter.com">Twitter</a><br>
+                    <a href="https://instagram.com">Instagram</a>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</body>
+</html>
